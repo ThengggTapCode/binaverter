@@ -45,6 +45,7 @@ def itb_menu():
     while True:
         try:
             n = input("Nhập số nguyên (nhập T để thoát lựa chọn): ")
+            clear_terminal()
             n = int(n)
         except ValueError:
             if n.lower() == 't':
@@ -55,7 +56,6 @@ def itb_menu():
         
         binary = interger_to_binary(abs(n))
         
-        print()
         if abs(n) >= 2 ** 23:
             binary = add_bits(n, binary, 32)
             

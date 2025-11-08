@@ -10,7 +10,7 @@ if __name__ == '__main__':
         print("3. Thoát\n" + Fore.RESET)
         
         select = input("Vui lòng nhập lựa chọn để sử dụng: ")
-        print()
+        clear_terminal()
         match select:
             case '1':
                 itb_menu()
@@ -19,6 +19,7 @@ if __name__ == '__main__':
                 pass
             case '3':
                 exit = input(Fore.YELLOW + Style.BRIGHT + "Nhập bất kì phím nào để thoát\n" + Style.RESET_ALL)
+                clear_terminal()
                 break
             case _:
                 print_error("Lựa chọn đã nhập không hợp lệ!")
