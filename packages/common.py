@@ -13,3 +13,4 @@ def clear_terminal():
     # unix/other system
     else:
         system("clear")
+        

@@ -60,7 +60,7 @@ def itb_menu():
             if n.lower() == 't':
                 print(Fore.YELLOW + Style.BRIGHT + "\nThoát lựa chọn...", Style.RESET_ALL)
                 return
-            print_error("Vui lòng chỉ nhập số nguyên!")
+            print_error("VUI LÒNG CHỈ NHẬP SỐ NGUYÊN")
             continue
         
         # convert |n| interger to binary

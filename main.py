@@ -31,7 +31,7 @@ if __name__ == '__main__':
                 
                 # invalid choice
                 case _:
-                    print_error("Lựa chọn đã nhập không hợp lệ!")
+                    print_error("LỰA CHỌN ĐÃ NHẬP KHÔNG HỢP LỆ!")
                     
         # KeyboardInterrupt exception
         except KeyboardInterrupt:
