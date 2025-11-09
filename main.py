@@ -10,20 +10,30 @@ if __name__ == '__main__':
         print("3. Thoát\n" + Fore.RESET)
         
         try:
+            # get user choice
             select = input("Vui lòng nhập lựa chọn để sử dụng: ")
             clear_terminal()
             match select:
+                # interger to binary
                 case '1':
                     itb_menu()
+                    
+                # binary to interger
                 case '2':
                     # under development!
                     pass
+                
+                # exit
                 case '3':
                     exit = input(Fore.YELLOW + Style.BRIGHT + "Nhập bất kì phím nào để thoát\n" + Style.RESET_ALL)
                     clear_terminal()
                     break
+                
+                # invalid choice
                 case _:
                     print_error("Lựa chọn đã nhập không hợp lệ!")
+                    
+        # KeyboardInterrupt exception
         except KeyboardInterrupt:
             clear_terminal()
             exit = input("Đã phát hiện Ctrl-C. Nhập bất kì phim nào để thoát. Nhập phím 'T' để tiếp tục chương trình\n").lower()

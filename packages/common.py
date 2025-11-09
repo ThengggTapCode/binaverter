@@ -7,7 +7,9 @@ def print_error(msg):
     print("------------------------------------------\n" + Fore.RESET)
 
 def clear_terminal():
+    # windows system
     if name == 'nt':
         system("cls")
+    # unix/other system
     else:
         system("clear")
