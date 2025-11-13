@@ -13,4 +13,13 @@ def clear_terminal():
     # unix/other system
     else:
         system("clear")
-        
+
+# print final binary result
+def print_binary(n, binary, mode):
+    if mode == 'itb':
+        print(Fore.GREEN + f'{n} = ', end='')
+        for i in binary:
+            print(i,end='')
+        print(Fore.RESET + "\n")
+    elif mode == 'bti':
+        print(Fore.GREEN + f"{binary} = {n}\n" + Fore.RESET)
