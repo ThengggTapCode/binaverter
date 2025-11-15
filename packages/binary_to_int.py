@@ -1,4 +1,5 @@
 from .common import *
+from .algorithms import *
 
 # get sign of binary
 def get_binary_sign():
@@ -8,41 +9,6 @@ def get_binary_sign():
             print_error("DẤU ĐÃ NHẬP KHÔNG HỢP LỆ!")
         else:
             return sign
-
-# get sum/result of binary
-def binary_sum(binary):
-    bit_index = 0
-    sum = 0
-    for i in binary[::-1]:
-        if i == '1':
-            sum += 2 ** bit_index
-        bit_index += 1
-    return sum
-
-# get negative sum/result of binary
-def negative_binary_result(binary):
-    inverse_bit(binary, len(binary) - 1)
-    one_addition(binary, len(binary) - 1)
-    return -1 * binary_sum(binary)
-
-""""
-inverse all bits of binary
-0 => 1
-1 => 0
-"""
-def inverse_bit(binary, right):
-    for bit in range(right, -1, -1):
-        binary[bit] = '1' if binary[bit] == '0' else '0'
-    return binary
-
-# add one to binary
-def one_addition(binary, right):
-    for bit in range(right, -1, -1):
-        if binary[bit] == '0':
-            binary[bit] = '1'
-            return binary
-        binary[bit] = '0'
-    return binary
 
 # binary to interger menu
 def bti_menu():
@@ -56,7 +22,7 @@ def bti_menu():
         # exit the current choice
         if len(binary) == 1 and 't' in binary:
             clear_terminal()
-            print(Fore.YELLOW + Style.BRIGHT + "Thoát lựa chọn...\n", Style.RESET_ALL)
+            print(Fore.YELLOW + Style.BRIGHT + "Đã thoát lựa chọn!\n", Style.RESET_ALL)
             return
         
         # check for invalid binary
@@ -78,6 +44,9 @@ def bti_menu():
             sum = binary_sum(binary)
         elif sign == '-':
             sum = negative_binary_result(binary)
+        
+        binary_temp = format_binary(sum, list(binary_temp), True)
+        clear_terminal()
         
         # print the binary
         print_binary(sum, binary_temp, 'bti')

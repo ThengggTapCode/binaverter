@@ -22,4 +22,6 @@ def print_binary(n, binary, mode):
             print(i,end='')
         print(Fore.RESET + "\n")
     elif mode == 'bti':
-        print(Fore.GREEN + f"{binary} = {n}\n" + Fore.RESET)
+        for i in binary:
+            print(Fore.GREEN + i ,end='')
+        print(f" = {n}\n" + Fore.RESET)
