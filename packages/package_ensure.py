@@ -3,8 +3,7 @@ import sys
 import logging
 from .common import *
 
-def package_ensure(package_name):
-    clear_terminal()
+def package_ensure(package_name): 
     logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(message)s')
     
     try:
