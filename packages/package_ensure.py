@@ -11,4 +11,3 @@ def package_ensure(package_name):
         logging.warning(f"Gói '{package_name}' chưa được cài đặt, tiến hành cài đặt...")
         subprocess.check_call([sys.executable, "-m", "pip", "install", package_name])
         logging.info(f"Gói '{package_name} đã được cài đặt thành công'")
-        clear_terminal()
