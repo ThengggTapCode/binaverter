@@ -15,13 +15,13 @@ def clear_terminal():
         system("clear")
 
 # print final binary result
-def print_binary(n, binary, mode):
+def print_binary(n, binary, mode, text):
+    
+    binary = ''.join(binary)
     if mode == 'itb':
-        print(Fore.GREEN + f'{n} = ', end='')
-        for i in binary:
-            print(i,end='')
-        print(Fore.RESET + "\n")
+        print(Fore.GREEN + f'{n} = {binary}\n' + Fore.RESET)
     elif mode == 'bti':
-        for i in binary:
-            print(Fore.GREEN + i ,end='')
-        print(f" = {n}\n" + Fore.RESET)
+        print(Fore.GREEN + f'{binary} = {n}\n' + Fore.RESET)
+    elif mode == 'ttb':
+        print(Fore.GREEN + f'{text} = ')
+        print(f'{binary}\n' + Fore.RESET)

@@ -25,4 +25,4 @@ def itb_menu():
         clear_terminal()
         
         # print the final binary result
-        print_binary(n, binary, 'itb')
+        print_binary(n, binary, 'itb', None)

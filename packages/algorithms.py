@@ -11,7 +11,7 @@ def add_bits(n, binary, bits):
     return binary
 
 # format binary for better visual
-def format_binary(n, binary, skip_add_bits = False):
+def format_binary(n, binary, skip_add_bits = False, skip_add_spaces = False):
     # get needed length for displaying binary
     bit_length = max(8, ((abs(n).bit_length() + 7) // 8) * 8)
     
@@ -23,7 +23,8 @@ def format_binary(n, binary, skip_add_bits = False):
     if not skip_add_bits:
         binary = add_bits(n, binary, bit_length)
     
-    if bit_length > 8:
+    # skip add spaces ONLY when working with binary of texts
+    if bit_length > 8 and not skip_add_spaces:
         for i in range(8, bit_length, 9):
             binary.insert(i, ' ')
     

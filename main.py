@@ -3,15 +3,17 @@ from packages import *
 if __name__ == '__main__':
     while True:
         # menu
-        print(Fore.BLUE + Style.BRIGHT + "BINAVERTER ----- v1.0\n" + Style.RESET_ALL)
-        print("Nhập số tương ứng với lựa chọn:\n")
+        print(Fore.BLUE + Style.BRIGHT + "BINAVERTER ----- v2.0\n" + Style.RESET_ALL)
+        print("Nhập kí tự tương ứng với lựa chọn:\n")
         print(Fore.GREEN + "1. Chuyển đổi số nguyên sang mã nhị phân")
         print("2. Chuyển đổi mã nhị phân sang số nguyên")
-        print("0. Thoát\n" + Fore.RESET)
+        print("3. Chuyển đổi văn bản sang mã nhị phân")
+        print("4. Chuyển đổi mã nhị phân sang văn bản")
+        print("T/t. Thoát\n" + Fore.RESET)
         
         try:
             # get user choice
-            select = input("Vui lòng nhập lựa chọn để sử dụng: ")
+            select = input("Vui lòng nhập lựa chọn để sử dụng: ").lower()
             clear_terminal()
             match select:
                 # interger to binary
@@ -22,8 +24,16 @@ if __name__ == '__main__':
                 case '2':
                     bti_menu()
                 
+                # text to binary
+                case '3':
+                    ttb_menu()
+
+                # binary to text
+                case '4':
+                    pass
+                
                 # exit
-                case '0':
+                case 't':
                     exit = input(Fore.YELLOW + Style.BRIGHT + "Nhập bất kì phím nào để thoát\n" + Style.RESET_ALL)
                     clear_terminal()
                     break
