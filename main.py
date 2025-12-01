@@ -1,6 +1,7 @@
 from packages import *
 
 if __name__ == '__main__':
+    clear_terminal()
     while True:
         # menu
         print(Fore.BLUE + Style.BRIGHT + "BINAVERTER ----- v2.0\n" + Style.RESET_ALL)
